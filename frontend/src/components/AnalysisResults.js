@@ -236,8 +236,8 @@ function AnalysisResults({ data, onReset }) {
     if (url.startsWith('http://') || url.startsWith('https://')) {
       return url;
     }
-    // Otherwise, prefix with API URL (without /api since backend serves /uploads directly)
-    const baseUrl = API_URL.replace('/api', '') || '';
+    // Otherwise, prefix with API URL (backend serves /uploads directly)
+    const baseUrl = API_URL || '';
     return baseUrl + url;
   };
 
