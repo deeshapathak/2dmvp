@@ -11,6 +11,7 @@ import {
   Zap,
   Shield
 } from 'lucide-react';
+import { API_URL } from '../config';
 
 const ResultsContainer = styled.div`
   display: flex;
@@ -261,10 +262,21 @@ function AnalysisResults({ data, onReset }) {
     }
   };
 
+  const getFullUrl = (url) => {
+    if (!url) return url;
+    // If URL is already absolute, return as-is
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    // Otherwise, prefix with API URL (without /api since backend serves /uploads directly)
+    const baseUrl = API_URL.replace('/api', '') || '';
+    return baseUrl + url;
+  };
+
   const handleDownload = () => {
     if (data.after_url) {
       const link = document.createElement('a');
-      link.href = data.after_url;
+      link.href = getFullUrl(data.after_url);
       link.download = 'rhinovate-after.jpg';
       link.click();
     }
@@ -277,7 +289,7 @@ function AnalysisResults({ data, onReset }) {
           <ImageContainer>
             <ImageLabel>Before</ImageLabel>
             <ImageWrapper>
-              <ResultImage src={data.before_url} alt="Before analysis" />
+              <ResultImage src={getFullUrl(data.before_url)} alt="Before analysis" />
               <ImageBadge type="before">Original</ImageBadge>
             </ImageWrapper>
           </ImageContainer>
@@ -285,7 +297,7 @@ function AnalysisResults({ data, onReset }) {
           <ImageContainer>
             <ImageLabel>After AI Enhancement</ImageLabel>
             <ImageWrapper>
-              <ResultImage src={data.after_url} alt="After analysis" />
+              <ResultImage src={getFullUrl(data.after_url)} alt="After analysis" />
               <ImageBadge type="after">AI Enhanced</ImageBadge>
             </ImageWrapper>
           </ImageContainer>

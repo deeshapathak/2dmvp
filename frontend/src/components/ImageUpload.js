@@ -3,6 +3,7 @@ import { useDropzone } from 'react-dropzone';
 import styled from 'styled-components';
 import { Camera, Upload, Loader, AlertCircle } from 'lucide-react';
 import axios from 'axios';
+import { API_URL } from '../config';
 
 const UploadContainer = styled.div`
   display: flex;
@@ -177,7 +178,7 @@ function ImageUpload({ onAnalysisComplete, isLoading, setIsLoading }) {
       const formData = new FormData();
       formData.append('file', selectedFile);
 
-      const response = await axios.post('/analyze', formData, {
+      const response = await axios.post(`${API_URL}/analyze`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
