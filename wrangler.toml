@@ -1,0 +1,6 @@
+# Cloudflare Pages configuration
+[build]
+command = "npm run build"
+cwd = "."
+output_dir = "frontend/build"
+
