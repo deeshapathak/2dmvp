@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Camera, Upload, Sparkles, Shield, Zap } from 'lucide-react';
+import { Sparkles, Shield, Zap } from 'lucide-react';
 import ImageUpload from './components/ImageUpload';
 import AnalysisResults from './components/AnalysisResults';
 import Header from './components/Header';

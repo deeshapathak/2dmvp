@@ -6,9 +6,6 @@ import {
   Download, 
   Sparkles, 
   CheckCircle, 
-  ArrowRight,
-  Heart,
-  Zap,
   Shield
 } from 'lucide-react';
 import { API_URL } from '../config';
@@ -18,35 +15,6 @@ const ResultsContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-`;
-
-const ScoreSection = styled.div`
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 16px;
-  padding: 2rem;
-  color: white;
-  text-align: center;
-`;
-
-const ScoreTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-`;
-
-const ScoreValue = styled.div`
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(45deg, #fff, #e0e7ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-`;
-
-const ScoreDescription = styled.p`
-  opacity: 0.9;
-  font-size: 1.1rem;
 `;
 
 const ImagesSection = styled.div`

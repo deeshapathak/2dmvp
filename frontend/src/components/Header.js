@@ -37,27 +37,6 @@ const LogoIcon = styled.div`
   color: white;
 `;
 
-const Nav = styled.nav`
-  display: flex;
-  gap: 2rem;
-  
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const NavLink = styled.a`
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-  
-  &:hover {
-    opacity: 1;
-  }
-`;
-
 const CTAButton = styled.button`
   background: linear-gradient(45deg, #667eea, #764ba2);
   color: white;
